@@ -32,7 +32,7 @@ jobs:
           port: ${{ secrets.PORT }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          scp_source: /home/runner/work/action_test/action_test/target      #此项参数为github仓库的位置和编译后的位置
+          scp_source: /home/runner/work/action_test/action_test/target/apc      #此项参数为github仓库的位置和编译后的位置
           scp_target: /home/
           before_script: |
             df -h
