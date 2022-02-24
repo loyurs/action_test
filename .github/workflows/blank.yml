@@ -26,3 +26,11 @@ jobs:
         with:
           command: build
           args: --release --all-features
+      - name: deploy file to server
+        uses: wlixcc/SFTP-Deploy-Action@v1.0 
+        with:  
+          username: 'root'   #ssh user name
+          server: '115.159.115.244'                  #'${{ secrets.SERVER_IP }}' #引用之前创建好的secret
+          ssh_private_key: ${{ secrets.TENCENTCLOUD }} #引用之前创建好的secret
+          local_path: './build/*'  # 对应我们项目build的文件夹路径
+          remote_path: '/home/'
